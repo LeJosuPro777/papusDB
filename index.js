@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());// permite hacer la solicitud de datos
 app.use(json()); // los datos los convierte a json
 
-const connectionString = process.env.MONGO_BD_URI || "mongodb+srv://database:EkZ9946YppnOoq1s@cluster0.nvrhj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const connectionString = process.env.MONGO_BD_URI
 //la url que necesita para hacer la coneccion con la db
 
 mongoose.connect(connectionString) //conexion a mongo db
