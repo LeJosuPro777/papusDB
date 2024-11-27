@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());// permite hacer la solicitud de datos
 app.use(json()); // los datos los convierte a json
 
-const connectionString = process.env.MONGO_BD_URI || "mongodb+srv://database:EkZ9946YppnOoq1s@cluster0.nvrhj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const connectionString = process.env.MONGO_BD_URI
 //la url que necesita para hacer la coneccion con la db
 
 mongoose.connect(connectionString) //conexion a mongo db
@@ -24,7 +24,7 @@ mongoose.connect(connectionString) //conexion a mongo db
 app.get('/api/memoryContent', (req, res) => getAllMemoryGames(req, res));
 app.post('/create-memory-game', (req, res) => postMemoryGame(req, res));
 
-const PORT = process.env.MONGO_BD_URI || 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
